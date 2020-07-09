@@ -7,9 +7,9 @@ bash generated-clouds.sh
 # Inspect cloud
 #eog clouds/lod-cloud-sm.jpg
 # Number of links
-LINKS=`grep "<line" clouds/lod-cloud.svg | wc`
+LINKS=`grep "<line" clouds/lod-cloud.svg | wc -l`
 # Number of datasets
-DATASETS=`grep "<circle" clouds/lod-cloud.svg | wc`
+DATASETS=`grep "<circle" clouds/lod-cloud.svg | wc -l`
 echo "$LINKS links between $DATASETS datasets"
 
 cd /lod-cloud-site
@@ -27,3 +27,6 @@ sed "s/==LINKS==/$LINKS/" src/main/webapp/index-template | sed "s/==DATASETS==/$
 sed -i "/TABLE/a <tr typeof=\"dctype:Image\" about=\"#cloud\" property=\"dc:title\" content=\"LOD cloud diagram\"> <th property=\"dc:modified\" datatype=\"xsd:date\" content=\"$DATE\">$DATE</th><td></td><td></td><td></td><td><a href=\"versions/$DATE/lod-cloud.png\">png</a></td><td></td><td><a href=\"versions/$DATE/lod-cloud.svg\">svg</a></td><td><a href=\"versions/$DATE/lod-data.json\">json</a></td><td></td><td class=\"dataset-count\">$DATASETS</td></tr>" src/main/webapp/index-template 
 mvn install
 python3 for-mongo.py src/main/webapp/lod-data.json > lod-data-mongo.json
+cd src/main/webapp/versions
+zip -r versions.zip *
+zip versions.zip ../index-template
