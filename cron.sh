@@ -2,7 +2,7 @@
 
 # These two commands must be run once
 # docker build -t nuig_uld/lod-docker-update
-# docker create --name lod-cloud-update nuig_uld/lod-docker-update
+# docker create --name lod-cloud-updater nuig_uld/lod-docker-update
 docker start -a lod-cloud-updater
 cd servlet
 bash make-servlet.sh

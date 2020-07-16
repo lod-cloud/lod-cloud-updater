@@ -2,8 +2,8 @@
 
 cd /lod-cloud-draw
 git pull
-python3 scripts/get-data.py
-bash generated-clouds.sh
+#python3 scripts/get-data.py
+bash generate-clouds.sh
 # Inspect cloud
 #eog clouds/lod-cloud-sm.jpg
 # Number of links

@@ -11,6 +11,6 @@ ADD run.sh /
 ADD versions.zip /lod-cloud-site/src/main/webapp/versions/
 RUN chmod a+x run.sh
 # DEBUG
-#ADD lod-data.json /lod-cloud-draw/
+ADD lod-data.json /lod-cloud-draw/
 
 ENTRYPOINT /run.sh
