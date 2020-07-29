@@ -14,4 +14,4 @@ mongoimport --collection datasets --db mern-dataset-app --drop lod-data-mongo.js
 rm lod-data-mongo.json
 docker stop lod-cloud
 docker rm lod-cloud
-docker run -d -p 9001:8080 --name lod-cloud --restart always nuig_uld/lod-cloud-servlet
+docker run -d -p 9001:8080 --name lod-cloud --network lod-cloud-net --restart always nuig_uld/lod-cloud-servlet

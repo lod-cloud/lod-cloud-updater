@@ -28,5 +28,5 @@ sed -i "/TABLE/a <tr typeof=\"dctype:Image\" about=\"#cloud\" property=\"dc:titl
 mvn install
 python3 for-mongo.py src/main/webapp/lod-data.json > lod-data-mongo.json
 cd src/main/webapp/versions
-zip -r versions.zip *
-zip versions.zip ../index-template
+zip -r ../versions.zip *
+zip ../versions.zip ../index-template
